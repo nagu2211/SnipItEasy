@@ -1,8 +1,9 @@
 "use client"
 
 import {useState} from "react"
-import app from "../../firebaseConfig"
 import {collection,addDoc, getFirestore} from "firebase/firestore"
+import app from "../../firebaseConfig"
+import URL from "./url"
 
 export default function Home() {
   app
@@ -30,21 +31,9 @@ export default function Home() {
         <form  onSubmit={handleSubmit}>
           <input type="text" placeholder="URL" onChange={(e)=>setUrl(e.target.value)}/>
           <button className="btn bg-slate-500">Acorta</button>
+        <URL/>
         </form>
       </div>
     </main>
   );
 }
-
-// const handleSubmit = (e:React.FormEvent) => {
-  //   e.preventDefault();
-  //   const url = inputRef.current?.value;
-  //   fetch('/api',{
-  //     method:'POST',
-  //     headers:{
-  //       'Content-Type':'application/json',
-  //     },
-  //     body: JSON.stringify(url)
-  //   }).then((res) => res.json())
-  //   .then((data) => {setShortUrl(data.shortUrl)});
-  // }
