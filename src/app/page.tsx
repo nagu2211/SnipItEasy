@@ -1,24 +1,24 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import { collection, addDoc, getFirestore } from 'firebase/firestore';
 import app from '../../firebaseConfig';
 
 export default function Home() {
   app;
+  const inputRef = useRef<HTMLInputElement>(null);
   const [url, setUrl] = useState('');
   const [shortUrl, setShortUrl] = useState('');
-  const short = Math.random().toString(36).substring(2, 5);
   const db = getFirestore();
-
+  
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    const alias = inputRef.current?.value || Math.random().toString(36).substring(2, 5);
+    setShortUrl(alias);
     const linkShort = {
       url,
-      shortUrl: short,
+      shortUrl:alias,
     };
-    setShortUrl(short);
-
     try {
       await addDoc(linkCollection, linkShort);
     } catch (error) {
@@ -28,10 +28,11 @@ export default function Home() {
   const linkCollection = collection(db, 'link');
 
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex">
+    <main>
+      <div>
         <form onSubmit={handleSubmit}>
-          <input type="text" placeholder="URL" onChange={(e) => setUrl(e.target.value)} />
+          <input type="text" placeholder="URL" onChange={(e) => setUrl(e.target.value)} required/>
+          <input type="text" ref={inputRef}  placeholder="ALIAS" />
           <button className="btn bg-slate-500">Acorta</button>
           <span>{shortUrl ? `Url : http://localhost:3000/${shortUrl}` : 'Url:'}</span>
         </form>
