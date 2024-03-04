@@ -3,7 +3,6 @@ import { addDoc, collection, getFirestore } from 'firebase/firestore';
 import { useRef, useState } from 'react';
 import app from '../../firebaseConfig';
 
-
 export default function Home() {
   app;
   const inputRef = useRef<HTMLInputElement>(null);
@@ -29,20 +28,16 @@ export default function Home() {
 
   return (
     <>
-      <header className='top-0 z-10 absolute w-full'>
-        <nav className="flex justify-between">
-          <div className="p-5">
-            <h1>SNIP IT EASY</h1>
-          </div>
-          <ul className="flex justify-center text-center ">
-            <li className="p-5"><a href="">MY URL'S</a></li>
-            <li className="p-5"><a href="">SIGN UP</a></li>
-            <li className="p-5"><a href="">SIGN IN</a></li>
-          </ul>
-        </nav>
-      </header>
-      <main className="h-screen bg-main flex flex-col justify-center text-center">
-        <h1 className="">snipiteasy</h1>
+      <div className="light x1"></div>
+      <div className="light x2"></div>
+      <div className="light x3"></div>
+      <div className="light x4"></div>
+      <div className="light x5"></div>
+      <div className="light x6"></div>
+      <div className="light x7"></div>
+      <div className="light x8"></div>
+      <div className="light x9"></div>
+      <main className="h-screen bg-darkHome flex flex-col justify-center text-center">
         <div className="flex justify-center text-center ">
           <form onSubmit={handleSubmit}>
             <div className="relative flex w-96 flex-col rounded-xl bg-white bg-clip-border text-gray-700 shadow-md">
@@ -95,7 +90,7 @@ export default function Home() {
             </div>
           </form>
         </div>
-      </main>      
+      </main>
     </>
   );
 }
