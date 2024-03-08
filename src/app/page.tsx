@@ -8,7 +8,7 @@ export default function Home() {
   return (
      <main className="h-full">
       <Banner/>
-      {/* <FormShortener />  */}
+      <FormShortener /> 
      </main>
   )
   }

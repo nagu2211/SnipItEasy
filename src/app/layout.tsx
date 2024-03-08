@@ -88,7 +88,6 @@ export default function RootLayout({
             </div>
 
             <p className="mx-auto mt-6 max-w-md text-center leading-relaxed text-gray-500">
-              Shorten, customize, and track your links effortlessly with our powerful URL shortener. Simplify sharing and enhance your online experience{' '}
             </p>
             <p className="mx-auto mt-6 max-w-md text-center leading-relaxed text-gray-500">
               Crafted with creativity by Santiago Espindola. <br />
