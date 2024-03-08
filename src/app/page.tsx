@@ -1,14 +1,14 @@
 'use client';
 import app from '../../firebaseConfig';
-import { FormShortener } from './formShortener';
+import { FormShortener } from './formPage/formShortener';
+import { Banner } from './bannerHome/banner';
 
 export default function Home() {
   app;
   return (
-    <>
-      <main className="h-screen bg-darkHome flex flex-col justify-center text-center">
-        <FormShortener />
-      </main>
-    </>
-  );
-}
+     <main className="h-full">
+      <Banner/>
+      {/* <FormShortener />  */}
+     </main>
+  )
+  }
