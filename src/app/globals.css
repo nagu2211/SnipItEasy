@@ -13,7 +13,7 @@ main {
   margin: 0;
   height: 100vh;
   font-weight: 100;
-  background: radial-gradient(#081915, #1f1013);
+  background: radial-gradient(#ff0000, #ff0033);
   -webkit-animation: fadeIn 1 1s ease-out;
   -moz-animation: fadeIn 1 1s ease-out;
   -o-animation: fadeIn 1 1s ease-out;

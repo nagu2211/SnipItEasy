@@ -28,58 +28,44 @@ export function FormShortener() {
     }
   };
   const linkCollection = collection(db, 'link');
-  if (shortUrl == '') {
-    return (
-      <>
-        <section>
-          <div className="flex justify-center text-center w-full">
-            <form onSubmit={handleSubmit}>
-              <div className="relative flex flex-col rounded-xl bg-white bg-clip-border text-gray-700 shadow-md w-[70vw]">
-                <div className="relative mx-4 -mt-6 mb-4 grid h-28 place-items-center overflow-hidden rounded-xl bg-gradient-to-tr from-cyan-600 to-cyan-400 bg-clip-border text-white shadow-lg shadow-cyan-500/40">
-                  <h3 className="block font-sans text-3xl font-semibold leading-snug tracking-normal text-white antialiased">Shorten a long link</h3>
-                </div>
-                <div className="flex flex-col gap-4 p-6">
-                  <p className="font-bold">Paste a long URL</p>
-                  <div className="relative h-11 w-full min-w-[200px]">
-                    <input
-                      type="text"
-                      placeholder="Enter long link here"
-                      onChange={(e) => setUrl(e.target.value)}
-                      required
-                      className="peer h-full w-full rounded-md border border-blue-gray-200 bg-transparent px-3 py-3 font-sans text-sm font-normal text-blue-gray-700 outline outline-0 transition-all placeholder-shown:border placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 focus:border-2 focus:border-cyan-500 focus:border-t-transparent focus:outline-0 disabled:border-0 disabled:bg-blue-gray-50"
-                    />
-                  </div>
 
-                  <p className="font-bold">Customize your link</p>
-                  <div className="relative flex min-w-[200px]">
-                    <input
-                      readOnly
-                      value="https://snipit.ly/"
-                      className="peer h-full w-full rounded-md m-[5px] border border-blue-gray-200 bg-transparent px-3 py-3 font-sans text-sm font-bold text-blue-gray-700 outline outline-0 transition-all disabled:border-0 disabled:bg-blue-gray-50"
-                    />
-                    <input
-                      type="text"
-                      ref={inputRef}
-                      placeholder="Alias (optional)"
-                      className="peer h-full w-full rounded-md m-[5px] border border-blue-gray-200 border-t-transparent bg-transparent px-3 py-3 font-sans text-sm font-normal text-blue-gray-700 outline outline-0 transition-all placeholder-shown:border placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 focus:border-2 focus:border-cyan-500 focus:outline-0 disabled:border-0 disabled:bg-blue-gray-50"
-                    />
-                  </div>
-                </div>
-                <div className="p-6 pt-0">
-                  <button
-                    data-ripple-light="true"
-                    className="block w-full select-none rounded-lg bg-gradient-to-tr from-cyan-600 to-cyan-400 py-3 px-6 text-center align-middle font-sans text-xs font-bold uppercase text-white shadow-md shadow-cyan-500/20 transition-all hover:shadow-lg hover:shadow-cyan-500/40 active:opacity-[0.85] disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
-                  >
-                    Shorten URL
-                  </button>
-                </div>
+  return (
+    <div className="mx-auto max-w-screen-xl px-4 py-16 sm:px-6 lg:px-8 lg:h-screen bg-[#f5f6f7]" id="getStarted">
+      <div className="mx-auto max-w-[70rem]">
+        <h1 className="text-center text-5xl font-bold text-indigo-600 sm:text-3xl">Shorten a long link</h1>
+        <p className="mx-auto mt-4 max-w-md text-center font-bold text-gray-500">Powerful bonds start with just one click</p>
+        {shortUrl !== '' ? (
+          <ViewShortUrl url={url} shortUrl={shortUrl} onReset={handleReset} />
+        ) : (
+          <form onSubmit={handleSubmit} className="mb-0 mt-6 space-y-4 rounded-lg p-4 shadow-lg sm:p-6 lg:p-8">
+            <p className="text-center text-lg font-medium">Paste a long URL</p>
+
+            <div>
+              <div className="relative">
+                <input
+                  type="text"
+                  placeholder="example : http://www.long-link.org/longLink/link"
+                  onChange={(e) => setUrl(e.target.value)}
+                  required
+                  className="w-full rounded-lg border-gray-200 p-4 pe-12 text-sm shadow-sm"
+                />
+
+                <span className="absolute inset-y-0 end-0 grid place-content-center px-4">
+                  <i className="fa-solid fa-link text-gray-400 size-4"></i>
+                </span>
               </div>
-            </form>
-          </div>
-        </section>
-      </>
-    );
-  } else {
-    return <ViewShortUrl url={url} shortUrl={shortUrl} onReset={handleReset} />;
-  }
+            </div>
+            <div className="relative flex">
+              <input disabled className=" pr-2 w-full rounded-lg border-gray-200 p-4 pe-12 text-sm shadow-sm mr-[10px]" value="snipit.ly/" />
+              <input type="text" ref={inputRef} className=" pl-2 w-full rounded-lg border-gray-200 p-4 pe-12 text-sm shadow-sm ml-[10px]" placeholder="Enter alias (optional)" />
+            </div>
+
+            <button type="submit" className="block w-full rounded-lg bg-indigo-600 px-5 py-3 text-sm font-medium text-white">
+              Shorten URL
+            </button>
+          </form>
+        )}
+      </div>
+    </div>
+  );
 }
