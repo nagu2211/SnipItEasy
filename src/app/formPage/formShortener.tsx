@@ -30,8 +30,8 @@ export function FormShortener() {
   const linkCollection = collection(db, 'link');
 
   return (
-    <div className="mx-auto max-w-screen-xl px-4 py-16 sm:px-6 lg:px-8 lg:h-[70vh] bg-[#f5f6f7]" id="getStarted">
-      <div className="mx-auto max-w-[70rem]">
+    <div className="mx-auto max-w-[100%] px-4 py-16 sm:px-6 lg:px-8 lg:h-[80vh] bg-[#f5f6f7]" id="getStarted">
+      <div className="mx-auto max-w-[100%]">
         <h1 className="text-center text-5xl font-bold text-indigo-600 sm:text-3xl">Shorten a long link</h1>
         <p className="mx-auto mt-4 max-w-md text-center font-bold text-gray-500">Powerful bonds start with just one click</p>
         {shortUrl !== '' ? (
