@@ -81,7 +81,7 @@ export default function RootLayout({
         </header>
         {children}
         <ModalUrls />
-        {/* <footer className="bg-white border-gray-200">
+        <footer className="bg-white border-gray-200">
           <div className="mx-auto max-w-5xl px-4 py-16 sm:px-6 lg:px-8">
             <div className="flex justify-center ">
               <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">SNIPITLY</span>
@@ -159,7 +159,7 @@ export default function RootLayout({
               </li>
             </ul>
           </div>
-        </footer> */}
+        </footer>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js"></script>
       </body>
     </html>

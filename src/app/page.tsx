@@ -12,7 +12,7 @@ export default function Home() {
       <Banner/>
       <FormShortener/> 
       <AboutSection/>
-      {/* <FAQsection/> */}
+      <FAQsection/>
      </main>
   )
   }
