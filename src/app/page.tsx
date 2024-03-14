@@ -1,9 +1,9 @@
 'use client';
 import app from '../../firebaseConfig';
-import { FormShortener } from './formPage/formShortener';
-import { Banner } from './bannerHome/banner';
-import { AboutSection } from './about/about';
-import { FAQsection } from './FAQs/FAQs';
+import { FormShortener } from '../components/formPage/formShortener';
+import { Banner } from '../components/bannerHome/banner';
+import { AboutSection } from '../components/about/about';
+import { FAQsection } from '../components/FAQs/FAQs';
 
 export default function Home() {
   app;

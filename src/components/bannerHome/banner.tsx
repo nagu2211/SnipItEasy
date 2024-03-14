@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 export function Banner() {
   return (
     <section className="text-white overflow-hidden bg-gray-900 sm:grid sm:grid-cols-2 sm:items-center mt-16">
@@ -23,12 +25,15 @@ export function Banner() {
           </div>
         </div>
       </div>
-
-      <img
-        alt=""
-        src="https://images.unsplash.com/photo-1484959014842-cd1d967a39cf?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80"
-        className="h-full w-full object-cover sm:h-[calc(100%_-_2rem)] sm:self-end sm:rounded-ss-[30px] md:h-[calc(100%_-_4rem)] md:rounded-ss-[60px]"
-      />
+    <Image
+    src="/imageHome.jpg"
+    alt="Friends Sharing"
+    width={850}
+    height={1050}
+    className="h-full w-full object-cover object-center sm:h-[calc(100%_-_2rem)] sm:self-end sm:rounded-ss-[30px] md:h-[calc(100%_-_4rem)] md:rounded-ss-[60px]"
+    priority
+    />
+      
     </section>
   );
 }

@@ -1,3 +1,5 @@
+import { worksans } from "@/app/fonts";
+
 export function AboutSection() {
   return (
     <section className="bg-gray-900 text-white h-full" id="about">
@@ -5,7 +7,7 @@ export function AboutSection() {
         <div className="max-w-xl">
           <h2 className="text-3xl font-bold sm:text-4xl">What makes us special</h2>
 
-          <p className="mt-4 text-gray-300">
+          <p className={`${worksans.className} antialiased mt-4 text-gray-300`}>
             Welcome to SNIPITLY, your reliable companion in link simplification and enhancing your browsing experience. In a world where information moves at the speed of light, we believe in making
             the web more accessible, efficient, and easy to manage.
           </p>
