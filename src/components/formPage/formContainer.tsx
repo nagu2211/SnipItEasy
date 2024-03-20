@@ -7,11 +7,16 @@ export function FormContainer() {
   const [url, setUrl] = useState('');
   const [emptyUrl,setEmptyUrl] = useState(false)
   const [shortUrl, setShortUrl] = useState('');
+  const getDomainFromURL = (url: string) => {
+    const urlObject = new URL(url);
+    return urlObject.hostname;
+  };
   const db = getFirestore();
   useEffect(() => {
     if (url && shortUrl) {
-
-      const UrlLs = [url,shortUrl]
+      
+      const domain = getDomainFromURL(url)
+      const UrlLs = [domain,url,shortUrl]
       const storedLinks = JSON.parse(localStorage.getItem("links") || "[]");
       const updateUrlLs = [...storedLinks,UrlLs]
       localStorage.setItem("links",JSON.stringify( updateUrlLs))
