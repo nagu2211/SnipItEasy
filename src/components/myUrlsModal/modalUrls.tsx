@@ -1,13 +1,27 @@
 import copy from 'clipboard-copy';
-
+import { useState, useEffect } from 'react';
 interface linksLs {
   links: Array<[string, string, string]>;
 }
 
-export function ModalUrls({ links }: linksLs) {
+export function ModalUrls() {
+  const [links, setLinks] = useState<Array<[string, string, string]>>([]);
+
+  useEffect(() => {
+    const storedLinks = JSON.parse(localStorage.getItem('links') || '[]');
+    setLinks(storedLinks);
+  }, []);
+
   const handleCopy = (shortUrl: string) => {
     copy(`http://localhost:3000/${shortUrl}`);
   };
+
+  const handleDelete = (shortUrl: string) => {
+    const updatedLinks = links.filter((link: any) => link[2] !== shortUrl);
+    setLinks(updatedLinks);
+    localStorage.setItem('links', JSON.stringify(updatedLinks));
+  };
+
   return (
     <section>
       <div
@@ -35,8 +49,8 @@ export function ModalUrls({ links }: linksLs) {
               <p className="text-sm font-normal text-gray-500 ">Connect with one of our available wallet providers or create a new one.</p>
               <ul className="my-4 space-y-3">
                 {links.map(([domain, url, shortUrl], index) => (
-                  <li>
-                    <div className="relative rounded-lg border border-gray-200 shadow-lg" key={index}>
+                  <li key={index}>
+                    <div className="relative rounded-lg border border-gray-200 shadow-lg">
                       <div className="flex items-center gap-4 p-4">
                         <img alt="favicon of webpage" src={`https://${domain}/favicon.ico`} className="size-12 rounded-lg object-cover" />
 
@@ -54,7 +68,7 @@ export function ModalUrls({ links }: linksLs) {
                                 <i className="fa-solid fa-copy"></i>
                               </button>
 
-                              <button className="inline-block px-4 py-2 text-sm font-medium text-gray-700 hover:bg-gray-50 focus:relative">
+                              <button className="inline-block px-4 py-2 text-sm font-medium text-gray-700 hover:bg-gray-50 focus:relative" onClick={() => handleDelete(shortUrl)}>
                                 <i className="fa-solid fa-trash"></i>
                               </button>
                             </span>

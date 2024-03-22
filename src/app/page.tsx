@@ -11,16 +11,10 @@ import { ModalUrls } from '@/components/myUrlsModal/modalUrls';
 
 export default function Home() {
   app;
-  const [links, setLinks] = useState<Array<[string, string]>>([]);
-
-  useEffect(() => {
-    const storedLinks = JSON.parse(localStorage.getItem("links") || "[]");
-    setLinks(storedLinks);
-  }, []);
   return (
      <main className="h-full">
       <Navbar/>
-      <ModalUrls links={links}/>
+      <ModalUrls />
       <Banner/>
       <FormContainer/> 
       <AboutSection/>
