@@ -5,7 +5,7 @@ import { ViewShortUrl } from './viewShortUrl';
 export function FormContainer() {
   const inputRef = useRef<HTMLInputElement>(null);
   const [url, setUrl] = useState('');
-  const [emptyUrl,setEmptyUrl] = useState(false)
+  const [emptyUrl, setEmptyUrl] = useState(false);
   const [shortUrl, setShortUrl] = useState('');
   const getDomainFromURL = (url: string) => {
     const urlObject = new URL(url);
@@ -14,14 +14,13 @@ export function FormContainer() {
   const db = getFirestore();
   useEffect(() => {
     if (url && shortUrl) {
-      
-      const domain = getDomainFromURL(url)
-      const UrlLs = [domain,url,shortUrl]
-      const storedLinks = JSON.parse(localStorage.getItem("links") || "[]");
-      const updateUrlLs = [...storedLinks,UrlLs]
-      localStorage.setItem("links",JSON.stringify( updateUrlLs))
+      const domain = getDomainFromURL(url);
+      const UrlLs = [domain, url, shortUrl];
+      const storedLinks = JSON.parse(localStorage.getItem('links') || '[]');
+      const updateUrlLs = [...storedLinks, UrlLs];
+      localStorage.setItem('links', JSON.stringify(updateUrlLs));
     }
-  },[shortUrl]);
+  }, [shortUrl]);
 
   const handleReset = () => {
     setEmptyUrl(false);
@@ -83,7 +82,7 @@ export function FormContainer() {
               <input type="text" ref={inputRef} className=" pl-2 w-full rounded-lg border-gray-200 p-4 pe-12 text-sm shadow-sm ml-[10px]" placeholder="Enter alias (optional)" />
             </div>
 
-            <button type="submit" className="block w-full rounded-lg bg-blue-600 px-5 py-3 text-sm font-medium text-white" >
+            <button type="submit" className="block w-full rounded-lg bg-blue-600 px-5 py-3 text-sm font-medium text-white">
               Shorten URL
             </button>
           </form>

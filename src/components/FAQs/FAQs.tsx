@@ -50,7 +50,7 @@ const faqs : faqsProps[] = [
 
 export function FAQsection() {
   return (
-    <div className="space-y-4 py-7 px-6 bg-[#f5f6f7]">
+    <div className="space-y-4 py-7 px-6 bg-[#f5f6f7]" id="faqs">
       {faqs.map((faq, index) => (
         <details className="group border-s-4 border-blue-600 bg-gray-50 p-6 [&_summary::-webkit-details-marker]:hidden" open key={faq.id.toString()}>
           <summary className="flex cursor-pointer items-center justify-between gap-1.5">
