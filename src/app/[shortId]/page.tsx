@@ -3,7 +3,7 @@ import { useParams } from 'next/navigation';
 import { getFirestore, collection, query, where, getDocs } from 'firebase/firestore';
 import app from '../../../firebaseConfig';
 
-export default function shortIdPage() {
+export default function ShortIdPage() {
   app;
   const params = useParams();
   const shortId = params.shortId;
