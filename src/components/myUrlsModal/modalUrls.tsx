@@ -9,7 +9,7 @@ export function ModalUrls() {
   }, []);
 
   const handleCopy = (shortUrl: string) => {
-    copy(`http://localhost:3000/${shortUrl}`);
+    copy(`${process.env.NEXT_PUBLIC_API_URL}${shortUrl}`);
   };
 
   const handleDelete = (shortUrl: string) => {
@@ -50,12 +50,12 @@ export function ModalUrls() {
                         <img alt="favicon of webpage" src={`https://${domain}/favicon.ico`} className="size-12 rounded-lg object-cover" />
 
                         <div>
-                          <p className="font-medium text-gray-900">http://localhost:3000/{shortUrl}</p>
+                          <p className="font-medium text-gray-900">{process.env.NEXT_PUBLIC_API_URL}{shortUrl}</p>
 
                           <p className="line-clamp-1 text-sm text-blue-600">{url}</p>
                           <div className="flex justify-start pt-2">
                             <span className="inline-flex -space-x-px overflow-hidden rounded-md border bg-white shadow-sm">
-                              <a className="inline-block px-4 py-2 text-sm font-medium text-gray-700 hover:bg-gray-50 focus:relative" href={`http://localhost:3000/${shortUrl}`} target="_blank">
+                              <a className="inline-block px-4 py-2 text-sm font-medium text-gray-700 hover:bg-gray-50 focus:relative" href={`${process.env.NEXT_PUBLIC_API_URL}${shortUrl}`} target="_blank">
                                 <i className="fa-solid fa-arrow-up-right-from-square"></i>
                               </a>
 

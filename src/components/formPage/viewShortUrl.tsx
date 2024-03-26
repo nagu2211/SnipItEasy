@@ -10,7 +10,7 @@ export function ViewShortUrl({ url, shortUrl, onReset }: ViewShortenedUrlProps) 
   
 const handleCopy = (e : React.FormEvent) => {
   e.preventDefault()
-  copy(`http://localhost:3000/${shortUrl}`)
+  copy(`${process.env.NEXT_PUBLIC_API_URL}${shortUrl}`)
 };
 
   return (
@@ -33,7 +33,7 @@ const handleCopy = (e : React.FormEvent) => {
         SNIPITLY
       </p>
       <div className="relative flex">
-        <input type="text" readOnly value={`http://localhost:3000/${shortUrl}`} className="w-full rounded-lg border-gray-200 p-4 pe-12 text-sm shadow-sm" />
+        <input type="text" readOnly value={`${process.env.NEXT_PUBLIC_API_URL}${shortUrl}`} className="w-full rounded-lg border-gray-200 p-4 pe-12 text-sm shadow-sm" />
         <span className="absolute inset-y-0 end-0 grid place-content-center px-4">
           <i className="fa-solid fa-link text-gray-400 size-4"></i>
         </span>
@@ -42,7 +42,7 @@ const handleCopy = (e : React.FormEvent) => {
       <div className="flex justify-center ">
         <a
           className="inline-block rounded-full border border-blue-600 bg-blue-600 p-3 text-white hover:bg-transparent hover:text-blue-600 focus:outline-none focus:ring active:text-blue-500 mx-1"
-          href={`http://localhost:3000/${shortUrl}`}
+          href={`${process.env.NEXT_PUBLIC_API_URL}${shortUrl}`}
           target="_blank"
         >
           <i className="fa-solid fa-share"></i>
