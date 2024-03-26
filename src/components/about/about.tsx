@@ -43,7 +43,7 @@ export function AboutSection() {
               <h2 className="text-lg font-bold">Detailed Analytics.</h2>
 
               <p className={`${worksans.className} antialiased mt-1 text-sm text-gray-300`}>
-                Gain valuable insights into your links' performance with our comprehensive statistics. Track the number of clicks, the geographical location of visitors, and other essential data to
+                Gain valuable insights into your links performance with our comprehensive statistics. Track the number of clicks, the geographical location of visitors, and other essential data to
                 assess the impact of your links.
               </p>
             </div>
@@ -102,7 +102,7 @@ export function AboutSection() {
               <h2 className="text-lg font-bold">Exceptional Customer Support.</h2>
 
               <p className={`${worksans.className} antialiased mt-1 text-sm text-gray-300`}>
-                Our support team is always ready to assist you. Whether you have questions about using the platform or need technical assistance, we're here to provide you with a seamless experience.
+                Our support team is always ready to assist you. Whether you have questions about using the platform or need technical assistance, we&apos;re here to provide you with a seamless experience.
               </p>
             </div>
           </div>
