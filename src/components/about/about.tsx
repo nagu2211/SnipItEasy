@@ -28,7 +28,7 @@ export function AboutSection() {
               <h2 className="text-lg font-bold">Ease of Use.</h2>
 
               <p className={` ${worksans.className} antialiased mt-1 text-sm text-gray-300`}>
-                Our intuitive and straightforward interface lets you shorten your URLs with just a few clicks. Whether you're a casual user or a digital marketing professional, we've crafted an
+                Our intuitive and straightforward interface lets you shorten your URLs with just a few clicks. Whether you&apos;re a casual user or a digital marketing professional, we&apos;ve crafted an
                 experience that suits everyone.{' '}
               </p>
             </div>
