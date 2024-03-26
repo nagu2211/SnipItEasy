@@ -1,5 +1,4 @@
 'use client';
-import { useEffect, useState } from 'react';
 import app from '../../firebaseConfig';
 import { FormContainer } from '../components/formPage/formContainer';
 import { Banner } from '../components/bannerHome/banner';
@@ -11,6 +10,7 @@ import { ModalUrls } from '@/components/myUrlsModal/modalUrls';
 
 export default function Home() {
   app;
+  
   return (
      <main className="h-full">
       <Navbar/>
