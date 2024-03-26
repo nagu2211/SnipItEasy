@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export function Banner() {
   return (
-    <section className="text-white overflow-hidden bg-gray-900 sm:grid sm:grid-cols-2 sm:items-center mt-16">
+    <section className="text-white overflow-hidden bg-gray-900 sm:grid sm:grid-cols-2 sm:items-center mt-16" id="banner">
       <div className="mx-auto max-w-screen-xl px-4 py-32 lg:flex lg:h-screen lg:items-center">
         <div className="mx-auto max-w-3xl text-center">
           <span className="sm:block"> URL Shortener </span>

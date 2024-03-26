@@ -58,7 +58,6 @@ export function Footer(){
 
               <li>
                 <a href="#" rel="noreferrer" target="_blank" className="text-gray-700 transition hover:text-gray-700/75">
-                  <span className="sr-only">Dribbble</span>
                   <svg className="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                     <svg viewBox="0 0 24 24" id="meteor-icon-kit__solid-linkedin" fill="none" xmlns="http://www.w3.org/2000/svg">
                       <g id="SVGRepo_bgCarrier" strokeWidth="0"></g>
