@@ -29,7 +29,7 @@ export function AboutSection() {
 
               <p className={` ${worksans.className} antialiased mt-1 text-sm text-gray-300`}>
                 Our intuitive and straightforward interface lets you shorten your URLs with just a few clicks. Whether you&apos;re a casual user or a digital marketing professional, we&apos;ve crafted an
-                experience that suits everyone.{' '}
+                experience that suits everyone.
               </p>
             </div>
           </div>
@@ -44,7 +44,7 @@ export function AboutSection() {
 
               <p className={`${worksans.className} antialiased mt-1 text-sm text-gray-300`}>
                 Gain valuable insights into your links' performance with our comprehensive statistics. Track the number of clicks, the geographical location of visitors, and other essential data to
-                assess the impact of your links.{' '}
+                assess the impact of your links.
               </p>
             </div>
           </div>
@@ -59,7 +59,7 @@ export function AboutSection() {
 
               <p className={`${worksans.className} antialiased mt-1 text-sm text-gray-300`}>
                 SNIPITLY is not just about shortening links; we also offer advanced customization options. Personalize shortened URLs with meaningful aliases, adjust privacy settings, and set up
-                custom redirects according to your needs.{' '}
+                custom redirects according to your needs.
               </p>
             </div>
           </div>
@@ -88,7 +88,7 @@ export function AboutSection() {
 
               <p className={`${worksans.className} antialiased mt-1 text-sm text-gray-300`}>
                 Simplify collaboration by sharing links more effectively. Our service facilitates the management and tracking of shared links in a team, ideal for collaborative projects and marketing
-                campaigns.{' '}
+                campaigns.
               </p>
             </div>
           </div>
